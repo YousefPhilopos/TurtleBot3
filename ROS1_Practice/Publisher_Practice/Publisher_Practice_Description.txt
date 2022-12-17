@@ -1,0 +1,2 @@
+This is the code I used to understand writing a publisher node to interact with a topic in ROS1.
+It uses the turtlesim module and uses a publisher to tell the turtle the linear and angular velocity it should use.
