@@ -18,5 +18,5 @@ if __name__ == '__main__':
     #Outputs "Node has been started" to the console
     rospy.loginfo("Node has been started")
     
-    #spin is a rospy method that 
+    #spin is a rospy method that prevents the node from exiting until the node is shutdown
     rospy.spin()
