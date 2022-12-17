@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import rospy
 #Allows use of ROS functionalities such as interactions with topics
 
