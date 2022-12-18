@@ -1,0 +1,4 @@
+This is the code I used to understand writing a subscriber node to interact with a topic in ROS1.
+It subscribes to information recived from the "/turtle1/pose" topic.
+The information is the position of the turtle in the turtlesim module. This insformation is in the Pose class.
+It is then handled by the pose_callback function and outputted to the console
