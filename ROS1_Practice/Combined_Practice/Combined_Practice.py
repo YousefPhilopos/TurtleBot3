@@ -14,13 +14,14 @@ previous_x = 0
 def call_set_pen_service(r, g, b, width, off):
     #Creats a try and except that will take errors in the service calls and print them to the console as warnings
     try:
-        #Creates a variable that gets assigned a rospy method ehich calls the service. It is provided the topic and the class that os being called
+        #Creates a variable that gets assigned a rospy method ehich calls the service. It is provided the topic and the class that is being called
         set_pen = rospy.ServiceProxy ("/turtle1/set_pen", SetPen)
-        #
+        #calls the service by assigning it to a variable.
         response = set_pen(r, g, b, width, off)
     except rospy.ServiceServiceException as e:
         rospy.logwarn(e)
 
+#This 
 def pose_callback(pose: Pose):
     cmd = Twist()
     if pose.x > 9.0 or pose.x < 2.0 or pose.y > 9.0 or pose.y < 2.0:
