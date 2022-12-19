@@ -21,18 +21,21 @@ def call_set_pen_service(r, g, b, width, off):
     except rospy.ServiceServiceException as e:
         rospy.logwarn(e)
 
-#This 
+#This is the function that handles the information collected by the subscriber method.
 def pose_callback(pose: Pose):
     cmd = Twist()
+    #If the turtle is outisde of the set boundries it will begin to turn, otherwise it will contintue striaght. This is so taht it doesnt stop at a wall.
     if pose.x > 9.0 or pose.x < 2.0 or pose.y > 9.0 or pose.y < 2.0:
         cmd.linear.x = 1.0
         cmd.angular.z = 1.4
     else:
         cmd.linear.x = 5.0
         cmd.angular.z = 0.0
+    #Publish the change in linear and angular velocity
     pub.publish(cmd)
-
+    
     global previous_x
+    #If the turtles position crosses the boundry it will turn red or green depending on which side it is on. 
     if pose.x >= 5.5 and previous_x < 5.5:
         rospy.loginfo("Set color to red")
         call_set_pen_service(255, 0, 0, 3, 0)
