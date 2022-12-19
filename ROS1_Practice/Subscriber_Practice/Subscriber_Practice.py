@@ -4,7 +4,7 @@ import rospy
 #Imports the Pose class. This class is imported becasue it is the class that turtlesim publishes that holds the information of the position of the turtle
 from turtlesim.msg import Pose
 
-#This function is needed for the subscriber method. it is used to handle the data collected from the secscriber
+#This function is needed for the subscriber method. it is used to handle the data collected from the subscriber
 def pose_callback(msg):
     rospy.loginfo(msg)
 
